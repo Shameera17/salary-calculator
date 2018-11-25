@@ -1,37 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
 int main()
 {
-    char name[30];
-    double x/*basic salary*/ ;
-    float i1=(5/100);
-    float i2=(10/100);
-    float i3=(15/100);
+    char name[40];
+    //Basic Salary
+    double x;
+    const float y = 100.0;
+    const float i1=(5/y);
+    const float i2=(10/y);
+    const float i3=(15/y);
 
-    printf("\nEnter Employee name:\t");
-    scanf("%s",&name);
-    printf("\nEnter your basic salary:\t");
-    scanf("%f",&x);
+    printf("\n\t\t\t******************************\n\t\t\t\tSalary Calculator\n\t\t\t******************************\n");
 
-    if (x<=5000)
+    printf("\n\t\t\tEnter Employee name: ");
+    scanf("%[^\n]s",&name);
+    printf("\n\t\t\tEnter your basic salary: Rs. ");
+    scanf("%lf",&x);
+
+    if (x <= 5000)
     {
         x+=(x*i1);
-        printf("\nName of the employee:\t%s",name);
-        printf("\nSalary of the employee:\t%f",x);
+        printf("\n\t\t\tName of the employee: %s",name);
+        printf("\n\t\t\tNet Salary of the employee: Rs. %.2lf\n",x);
     }
-    if (5000<=x<10000)
+
+    if (x > 5000 && x < 10000)
     {
         x+=(x*i2);
-        printf("\nName of the employee:\t%s",name);
-        printf("\nSalary of the employee:\t%f",x);
+        printf("\n\t\t\tName of the employee: %s",name);
+        printf("\n\t\t\tNet Salary of the employee: Rs. %.2lf\n",x);
     }
-    if (x<=10000)
+
+    if (x >= 10000)
     {
         x+=(x*i3);
-        printf("\nName of the employee:\t%s",name);
-        printf("\nSalary of the employee:\t%f",x);
+        printf("\n\t\t\tName of the employee: %s",name);
+        printf("\n\t\t\tNet Salary of the employee: Rs. %.2lf\n",x);
     }
+
     return 0;
 }
